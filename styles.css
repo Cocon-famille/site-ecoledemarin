@@ -792,6 +792,122 @@ a:hover { color: var(--red); }
   color: rgba(250, 243, 227, 0.7);
 }
 
+/* ---------- site nav (screen only) ---------- */
+
+.site-nav {
+  width: var(--page-w);
+  max-width: 100%;
+  padding: 0 4px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(30, 27, 22, 0.6);
+}
+
+/* ---------- couvertures de cahiers ---------- */
+
+.sheet--cahier {
+  background: var(--cahier-bg, var(--cream));
+  color: var(--cahier-fg, var(--ink));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.sheet--cahier--bordered { border: 10px solid var(--ink); }
+
+.cahier-blob {
+  position: absolute;
+  right: -1.5in;
+  bottom: -1.6in;
+  width: 4in;
+  height: 4in;
+  border-radius: 50%;
+  background: var(--cahier-fg, var(--ink));
+  opacity: 0.08;
+}
+
+.cahier-kicker {
+  position: absolute;
+  top: var(--page-pad);
+  left: var(--page-pad);
+  right: var(--page-pad);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.35);
+  padding-bottom: 9px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.cahier-mid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+.cahier-title {
+  margin: 0;
+  max-width: 6in;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+}
+
+.cahier-title__sub {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.48em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cahier-fields {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 19px;
+}
+
+.cahier-field {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.cahier-field__line {
+  width: 2.6in;
+  border-bottom: 1.5px solid currentColor;
+  opacity: 0.6;
+}
+
+.cahier-note {
+  position: absolute;
+  left: var(--page-pad);
+  right: var(--page-pad);
+  bottom: var(--page-pad);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
 /* ---------- print ---------- */
 
 @page {
@@ -802,6 +918,7 @@ a:hover { color: var(--red); }
 @media print {
   html, body { background: #fff; }
   .pages { gap: 0; padding: 0; }
+  .site-nav { display: none; }
   .sheet {
     box-shadow: none;
     break-after: page;
